@@ -1,0 +1,164 @@
+@font-face{
+    font-family: digitFont;
+    src: url(/digital-7.ttf);
+}
+
+html,
+body,
+.mainDiv {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: digitFont;
+    text-align: center;
+    box-sizing: border-box;
+
+}
+.calcHeader {
+    margin: 10% 0 20% 0;
+    width: 100%;
+    height: 40px;
+    line-height: 1.15;
+    letter-spacing: 5px;
+}
+.calcHeader::after {
+    display: inline-block;
+    width: 10%;
+    height: 40px;
+    background: url(/headerIconCalc.png) no-repeat;
+    background-size: contain;
+    content: "";
+}
+
+.calcForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input[name="firstDigit"], input[name="secondDigit"] {
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 75%;
+    margin:  0 auto;
+    height: 50px;
+    margin-bottom: 20px;
+    padding-left: 15%;
+    color: white;
+    font-family: digitFont;
+    font-size: 35px;
+    outline: none;
+}
+
+input[name="firstDigit"] {
+    background: url(/num1.png) no-repeat;
+    background-size: contain;
+    color: white;
+}
+
+input[name="secondDigit"] {
+    background: url(/num2.png) no-repeat;
+    background-size: contain;
+}
+
+.calcBtn {
+    width: 90%;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 0 5px ;
+    margin: 0 auto;
+    font-family: digitFont;
+    font-size: 30px;
+    background: -webkit-linear-gradient(#1A6DFF, #C822FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.calcBtn::before {
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    background: url(/plusBtn.png) no-repeat;
+    background-position: left;
+    background-size: contain;
+    content: "";
+}
+
+.resultBorder {
+    width: 95%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0 60px;
+    z-index: 3;
+    background-position: center;
+
+    animation: borderRotation 0.5s  ease-in-out 6 , borderShadow 1.5s ease-in-out 2, opacity 1.5s ease-in 3s 1, borderShadow2 0.5s ease-in 3s 1 ;
+    box-shadow: 0px 0px 30px 0px rgb(11, 133, 0);
+    background-color: rgb(11, 133, 0);
+}
+
+.resultPopup {
+    width: calc(95% - 8px);
+    height: calc(50% - 8px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    border-radius: 0 60px;
+    z-index: 4;
+}
+
+.popupShade {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@keyframes borderRotation {
+    0%{background: linear-gradient(0deg, #e66465, #9198e5);}
+    10%{background: linear-gradient(40deg, #e66465, #9198e5);}
+    20%{background: linear-gradient(80deg, #e66465, #9198e5);}
+    30%{background: linear-gradient(120deg, #e66465, #9198e5);}
+    40%{background: linear-gradient(160deg, #e66465, #9198e5);}
+    50%{background: linear-gradient(200deg, #e66465, #9198e5);}
+    60%{background: linear-gradient(210deg, #e66465, #9198e5);}
+    70%{background: linear-gradient(250deg, #e66465, #9198e5);}
+    80%{background: linear-gradient(310deg, #e66465, #9198e5);}
+    90%{background: linear-gradient(345deg, #e66465, #9198e5);}
+    100%{background: linear-gradient(360deg, #e66465, #9198e5);}
+
+}
+@keyframes borderShadow {
+    0%{box-shadow: 0px 0px 2px 0px rgba(255,255,255,1);}
+    50%{box-shadow: 0px 0px 34px 0px rgba(255,255,255,1);}
+    100%{box-shadow: 0px 0px 2px 0px rgba(255,255,255,1);}
+
+}
+
+@keyframes opacity {
+    from{opacity: 0.6;}
+    to{opacity: 1;}
+}
+@keyframes borderShadow2 {
+    0%{box-shadow: 0px 0px 3px 0px rgba(11,133,0,0.2);}
+    100%{box-shadow: 0px 0px 34px 0px rgba(11,133,0,1);}
+
+}
